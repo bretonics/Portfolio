@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Stop Signs</title>
+    </head>
+    <body>
+        <header>
+            <h1>STOP Signs</h1>
+            <p>Defined group of SVG elements with different transform animations.</p>
+            <hr><br>
+        </header>
+        <svg width="500" height="300">
+            <defs>
+                <g id="sign">
+                    <polygon fill="red" stroke="lightgrey" stroke-width="4"
+                    points="50,5
+                            120,5
+                            155,40
+                            155,110
+                            120,145
+                            50,145
+                            15,110
+                            15,40">
+                    </polygon>
+                    <text x=24 y=88 font-size="50px" fill="white">STOP</text>
+                </g>
+            </defs>
+
+            <!-- Regular -->
+            <use xlink:href="#sign" transform="translate(0,0)"></use>
+            <!-- Transform 90 degrees -->
+            <use xlink:href="#sign" transform="translate(165,-10) rotate(90,75,75)"> </use>
+            <!-- Transform 180 degrees -->
+            <use xlink:href="#sign" transform="translate(330,0) rotate(180,75,75)"> </use>
+            <!-- One full rotation -->
+            <use xlink:href="#sign" x=0 y=150>
+                <animateTransform
+                attributeName="transform"
+                begin="0s" dur="0.75s"
+                type="rotate"
+                from="0 85 225"
+                to="360 85 225">
+            </animateTransform>
+            </use>
+            <!-- Infinite rotation clockwise-->
+            <use xlink:href="#sign" x=155 y=150>
+                <animateTransform
+                    attributeName="transform"
+                    begin="0s" dur="0.75s"
+                    type="rotate"
+                    from="0 240 225"
+                    to="360 240 225"
+                    additive="sum"
+                    repeatCount="indefinite">
+                </animateTransform>
+            </use>
+            <!-- Infinite rotation counterclockwise -->
+            <use xlink:href="#sign" x=330 y=150>
+                <animateTransform
+                    attributeName="transform"
+                    begin="0s" dur="0.75s"
+                    type="rotate"
+                    from="0 415 225"
+                    to="-360 415 225"
+                    additive="sum"
+                    repeatCount="indefinite">
+                </animateTransform>
+            </use>
+        </svg>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <h1>Angular Pipe Implementation</h1>
+    <p>Split input word using user specified delimiter.</p>
+    <hr><br>
+
+    <p> Input: <input [(ngModel)]="input"> </p>
+    <p> Delimiter: <input [(ngModel)]="delim"> </p>
+    <p>{{ input | tokenizer }} (Default)</p>
+    <p>{{ input | tokenizer:delim }} (With option)</p>
+</div>

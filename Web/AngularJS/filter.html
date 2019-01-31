@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Filter">
+    <head>
+        <meta charset="utf-8">
+        <title>Filter Token</title>
+        <script src="js/angular157.js"></script>
+        <script src="js/filter.js"></script>
+    </head>
+    <body>
+        <h3>Split input word using user specified delimiter.</h3>
+        <hr><br>
+
+        <div ng-controller="FilterController">
+            <p> Input: <input ng-model="input"> </p>
+            <p> Delimiter: <input ng-model="delim"> </p>
+            <p>{{ input | tokenize }} (Default)</p>
+            <p>{{ input | tokenize:delim }} (With option)</p>
+        </div>
+    </body>
+</html>
